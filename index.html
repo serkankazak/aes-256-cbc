@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://web.archive.org/web/20160510105524/https://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+</head><body>
+
+Pass: <input type="text" id="1"><br><br>
+Enc: <input type="text" id="2"> = <input type="text" id="3"><br><br>
+Dec: <input type="text" id="4"> = <input type="text" id="5"><br><br>
+
+<input type="button" id="b" value="Go"><script>
+
+$("#b").bind("click", function() {
+	$("#3").val(CryptoJS.AES.encrypt($("#2").val(), $("#1").val()));
+	$("#5").val(CryptoJS.AES.decrypt($("#4").val(), $("#1").val()).toString(CryptoJS.enc.Utf8));
+});
+
+</script></body></html>
